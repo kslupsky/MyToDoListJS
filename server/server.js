@@ -7,6 +7,7 @@ const express = require("express");
 const path = require("path");
 const middleware = require("./middleware/middleware");
 const errorHandlingMiddleware = require("./middleware/error-handling");
+const PORT = process.env.PORT || 3000;
 
 // Controllers
 const UsersController = require("./controllers/users-controller");
@@ -26,6 +27,6 @@ app.get("/", (req, res) => {
 
 errorHandlingMiddleware(app);
 
-app.listen(9000, () => {
-    console.log("Server running on port 9000");
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
